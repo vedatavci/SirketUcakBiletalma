@@ -1,0 +1,37 @@
+{% extends "layout.html" %}
+
+{%block title%}
+        Uçak Düzenleme Sayfası
+{%endblock %}
+
+
+{%block body%}
+<center>
+  <h3   style=" color: black; font-family: initial; font-weight: bold;">Uçak Güncelle</h3><br>
+  <p style="font-weight: bold; color: orange;">Uçak Seçin</p>
+
+<form action = "{{ url_for('ucak_guncelle')}}", method = "POST">
+<select name="ucak">
+    {% for ucak in ucaklar %}
+    <option value="{{ucak.ucakId}}">{{ ucak.ucakModel }} *** Uçak Koltuk Sayısı:{{ucak.ucakKoltukSayisi}}</option>
+    {% endfor %}
+  </select>
+  <br><br>
+  
+  <p style="font-weight: bold; color: orange;">Uçak Modeli</p><input type = "text" name = "ucakModeli" /><br><br>
+  
+  <p style="font-weight: bold; color: orange;">Koltuk Sayısı</p><input type = "number" name = "koltukSayisi" min="0" /><br><br>
+  
+  <select name="sirket">
+    {% for sirket in sirketler %}
+    <option value="{{sirket.sirketId}}">{{ sirket.sirketAd }}</option>
+    {% endfor %}
+  </select><br><br>
+  
+  <input   style="background-color: orange; border-radius: 10px;"  type = "submit" value = "    Güncelle    " /><br>
+</form>
+
+</center>
+
+
+{%endblock %}

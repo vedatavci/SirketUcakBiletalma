@@ -1,0 +1,25 @@
+{% extends "layout.html" %}
+
+{%block title%}
+        Şirket Düzenleme Sayfası
+{%endblock %}
+
+
+{%block body%}
+<center>
+  <h3   style=" color: black; font-family: initial; font-weight: bold;">Şirket Güncelle</h3><br>
+  <p style="font-weight: bold; color: orange;">Şirket Adını Seçin</p>
+<form action = "{{ url_for('sirket_duzenle')}}", method = "POST">
+<select name="sirket">
+    {% for sirket in sirketler %}
+    <option value="{{sirket.sirketId}}">{{sirket.sirketAd}}</option>
+    {% endfor %}
+  </select><br><br>
+  <p style="font-weight: bold; color: orange;">Şirket Yeni Adı: </p><input type = "text" name = "sirketAd" /><br><br>
+  <input   style="background-color: orange; border-radius: 10px;"  type = "submit" value = "    Şirketi Düzenle    " /><br>
+</form>
+
+</center>
+
+
+{%endblock %}

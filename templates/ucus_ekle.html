@@ -1,0 +1,25 @@
+{% extends "layout.html" %}
+
+{%block title%}
+        Uçuş Ekleme Sayfası
+{%endblock %}
+
+{%block body%}
+<center>
+<form action = "{{ url_for('ucus_ekle')}}", method = "POST">
+    <h3   style=" color: black; font-family: initial; font-weight: bold;">Uçuş Ekle</h3><br>
+    
+    <p style="font-weight: bold; color: orange; font-style:inherit;">Eklemek İstediğiniz Uçuşu Seçin</p>
+    <select name="ucus">
+        {% for fiyat in fiyatlar %}
+        <option value="{{fiyat}}">Kalkış Şehri - {{fiyatlar[fiyat]["kalkisSehri"]}} ----->  Varış Şehri - {{fiyatlar[fiyat]["varisSehri"]}} ***** Şirket Adı {{fiyatlar[fiyat]["ucusSirketi"]}} ***** Uçak Modeli {{fiyatlar[fiyat]["ucusUcakModeli"] }} ***** Uçus Fiyatı {{fiyatlar[fiyat]["ucusFiyati"]}} </option>
+        {% endfor %}
+      </select><br><br>
+      <p style="font-weight: bold; color: orange; font-style:inherit;">Uçuş Tarihi: </p><input type = "date" name = "ucusTarihi" /><br><br>
+      <p style="font-weight: bold; color: orange; font-style:inherit;">Uçuş Saati:</p> <input type = "time" name = "ucusSaati" /><br><br>
+    
+      
+      <input   style="background-color: orange; border-radius: 10px;"  type = "submit" value = "     Ekle     " /><br><br>
+ </form>
+</center>
+{%endblock %}

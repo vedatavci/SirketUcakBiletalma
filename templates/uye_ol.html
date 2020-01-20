@@ -1,0 +1,31 @@
+{% extends "layout.html" %}
+
+{%block body%}
+
+<center>
+<form action = "{{ url_for('uye_ol')}}", method = "POST">
+    
+    <h2  style=" color: black; font-family: initial; font-weight: bold;"> Üye Ol Sayfası </h2><br>
+    
+    <table> 
+        <tr>
+<td style="font-weight: bold; color: rgba(255, 255, 255, 0.986);">Ad Giriniz: </td> </tr> <tr><td><input placeholder="Ad Girin" type = "text" name = "musteriAd" /><td><br><br>
+</tr>
+<tr >
+    <td style="font-weight: bold; color: white;">Soyad Giriniz: </td> </tr> <tr><td> <input placeholder="Soyad Girin" type = "text" name = "musteriSoyad" /><td><br><br>
+    </tr>
+    <tr >
+        <td style="font-weight: bold; color: white;">Kullanıcı Adı Giriniz: </td> </tr> <tr><td> <input  placeholder="Kullanıcı Adı" type = "text" name = "kullaniciAdi" /><td><br><br>
+    </tr>   
+    <tr >
+    <td style="font-weight: bold; color: white;">Şifre Giriniz: </td> </tr> <tr><td> <input  placeholder="Şifre " type = "text" name = "sifre" /><td><br><br>
+    </tr>
+    </table><br>
+
+    <input  style="background-color: orange; border-radius: 10px;" type = "submit" value = "    Üye Ol     " /><br>
+
+
+ </form>
+</center>
+
+{%endblock %}

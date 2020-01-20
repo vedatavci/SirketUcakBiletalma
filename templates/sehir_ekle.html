@@ -1,0 +1,23 @@
+{% extends "layout.html" %}
+
+{%block title%}
+        Şehir Ekleme Sayfası
+{%endblock %}
+
+{%block body%}
+<center>
+<form action = "{{ url_for('sehir_ekle')}}", method = "POST">
+    <h3    style=" color: black; font-family: initial; font-weight: bold;">Sehir Ekle</h3><br>
+    <p style="font-weight: bold; color: orange;">Şehir Girin: </p><input type = "text" name = "sehir" /><br><br>
+    
+    
+    <select name="ulke">
+        {% for ulke in ulkeler %}
+        <option value="{{ulke.ulkeId}}">{{ulke.ulkeAd}}</option>
+        {% endfor %}
+      </select><br><br>
+      
+   <input   style="background-color: orange; border-radius: 10px;"  type = "submit" value = "      Ekle     " /><br>
+ </form>
+ </center
+{%endblock %}

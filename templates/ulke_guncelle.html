@@ -1,0 +1,25 @@
+{% extends "layout.html" %}
+
+{%block title%}
+        Ülke Güncelleme Sayfası
+{%endblock %}
+
+
+{%block body%}
+<center>
+  <h3   style=" color: black; font-family: initial; font-weight: bold;">Ülke Güncelle</h3><br>
+  <p style="font-weight: bold; color: orange;">Ülkeyi Seçin</p>
+<form action = "{{ url_for('ulke_guncelle')}}", method = "POST">
+<select name="ulke">
+    {% for ulke in ulkeler %}
+    <option value="{{ulke.ulkeId}}">{{ulke.ulkeAd}}</option>
+    {% endfor %}
+  </select><br><br>
+  <p style="font-weight: bold; color: orange;">Ülke Yeni Adı</p><input type = "text" name = "ulkeAdi" /><br><br>
+  <input   style="background-color: orange; border-radius: 10px;"  type = "submit" value = "     Güncelle     " /><br>
+</form>
+</center>
+
+
+
+{%endblock %}

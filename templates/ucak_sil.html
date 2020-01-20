@@ -1,0 +1,22 @@
+{% extends "layout.html" %}
+
+{%block title%}
+        Uçak Silme Sayfası
+{%endblock %}
+
+{%block body%}
+<center>
+<form action = "{{ url_for('ucak_sil')}}", method = "POST">
+    <h3   style=" color: black; font-family: initial; font-weight: bold;">Uçak Sil</h3><br>
+    Uçak Modeli: <input type = "text" name = "ucakModeli" /><br><br>
+    
+    <select name="ucak">
+        {% for ucak in ucaklar %}
+        <option value="{{ucak.ucakId}}">{{ucak.ucakModel}} -- Uçak Koltuk Sayısı:{{ucak.ucakKoltukSayisi}}</option>
+        {% endfor %}
+      </select><br><br>
+      
+   <input   style="background-color: orange; border-radius: 10px;"  type = "submit" value = "     Sil     " /><br>
+ </form>
+</center>
+{%endblock %}

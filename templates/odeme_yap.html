@@ -1,0 +1,47 @@
+{% extends "layout.html" %}
+
+{%block title%}
+        Ödeme Sayfası
+{%endblock %}
+
+{%block body%}
+
+<table class="table">
+  <thead class="thead-dark">
+    <tr>
+      <th scope="col">Uçuş ID</th>
+      <th scope="col">Rezervasyon Saati</th>
+      <th scope="col">Bilet Sahibinin Adı</th>
+      <th scope="col">Bilet Sahibinin Aoyadı</th>
+      <th scope="col">Bilet Sahibinin Acsi</th>
+      
+    </tr>
+    
+  </thead>
+  <tbody>
+  {% for urun in spt %}
+  <form style="background-color: aliceblue;" action = "{{ url_for('rezervasyon_yap')}}", method = "POST"></form>
+  <tr>
+
+      <td style="color: black;">{{ spt[urun]["ucusId"] }}</td>
+      <td style="color: black;">{{ spt[urun]["rezervasyonSaati"] }}</td style="color: aliceblue;">
+      <td style="color: black;">{{ spt[urun]["biletSahibiAd"] }}</td style="color: aliceblue;">
+      <td style="color: black;">{{ spt[urun]["biletSahibiSoyad"] }}</td style="color: aliceblue;">
+      <td style="color: black;">{{ spt[urun]["biletSahibiTC"] }}</td style="color: aliceblue;">
+      
+    </tr>
+  </form>
+    {% endfor %}
+</table>
+<center>
+<form action = "{{ url_for('odeme_yap')}}", method = "POST">
+    <h3>Ödeme Yap</h3>
+    <p> Ödeme Tutarı {{tutar}}</p>
+    <p>Bonus: {{bonus}}</p>
+    <input type = "text" name = "tutar" readonly value="{{tutar}}" />
+    <input type = "number" name = "kullanilanBonus" min="0" max="{{bonus}}" value="0" /><br>
+    <input   style="background-color: orange; border-radius: 10px;"   type = "submit" value = "Ödeme Yap" /><br>
+  
+ </form>
+</center>
+{%endblock %}

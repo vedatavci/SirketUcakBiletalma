@@ -1,0 +1,28 @@
+{% extends "layout.html" %}
+
+{%block title%}
+        Rota Ekleme Sayfası
+{%endblock %}
+
+{%block body%}
+<center>
+<form action = "{{ url_for('rota_ekle')}}", method = "POST">
+    <h3   style=" color: black; font-family: initial; font-weight: bold;">Rota Ekle</h3><br>
+    <p style="font-weight: bold; color: orange;">Kalkış Şehrini Seçin</p>
+    <select name="kalkisSehri">
+        {% for sehir in sehirler %}
+        <option value="{{sehir.sehirId}}">{{sehir.sehirAd}}</option>
+        {% endfor %}
+      </select><br><br>
+      <p style="font-weight: bold; color: orange;"> Varış Şehrini Seçin</p>
+      <select name="varisSehri">
+        {% for sehir in sehirler %}
+        <option value="{{sehir.sehirId}}">{{sehir.sehirAd}}</option>
+        {% endfor %}
+      </select><br><br>
+      
+      
+   <input   style="background-color: orange; border-radius: 10px;"  type = "submit" value = "    Ekle    " /><br>
+ </form>
+ </center
+{%endblock %}

@@ -1,0 +1,32 @@
+  <nav  id="nav-bar" class="navbar navbar-expand-md navbar-dark top bg-dark">
+                <a class="navbar-brand pl-5" style="font-style: initial; font-weight:unset;" href="/"> Anasayfaya Gidiniz </a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                  <i class = "fa fa-bars"></i>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                  <ul class="navbar-nav ml-auto"> <!-- ml-auto sayesinde sağa yaslanırlar. -->
+                    
+                    {% if session["girisYapildiMi"] %}
+                    
+                    <li class="nav-item ">
+                      <a class="nav-link" href="/uye_cikis">Çıkış Yap</a>
+                    </li>
+                    <li class="nav-item">
+                            <a class="nav-link" href="/sepet">Sepet</a>
+                          </li>
+                    <li class="nav-item">z
+                  <a class="nav-link" href="/rezervasyonlarım">Rezervasyonlarım</a>
+                    </li>
+                    {% else %}
+                    
+                    <li class="nav-item">
+                      <a class="nav-link" href="/uye_giris">Giriş</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="/uye_ol">Üye Ol</a>
+                    </li>
+                    {% endif %}
+                  </ul>
+                </div>
+              </nav>    
+              

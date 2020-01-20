@@ -1,0 +1,41 @@
+{% extends "layout.html" %}
+
+{%block title%}
+        Rezervasyonlarım
+{%endblock %}
+
+
+{%block body%}
+
+<table class="table">
+  <thead class="thead-dark">
+    <tr>
+      <th scope="col">Uçuş ID</th>
+      <th scope="col">Rezervasyon Saati</th>
+      <th scope="col">Bilet Sahibinin Adı</th>
+      <th scope="col">Bilet Sahibinin Soyadı</th>
+      <th scope="col">Bilet Sahibinin TCsi</th>
+      
+    </tr>
+    
+  </thead>
+  <tbody>
+      {% for r in rezervasyonlarım %}
+  <form" action = "{{ url_for('rezervasyon_yap')}}", method = "POST"></form>
+  <tr>
+
+      <td style="color: black;">{{ r["ucusId"] }}</td>
+      <td style="color: black;">{{ r["rezervasyonTarih"] }}</td style="color: aliceblue;">
+      <td style="color: black;">{{ r["rBiletSahibiAd"]}}</td style="color: aliceblue;">
+      <td style="color: black;">{{ r["rBiletSahibiSoyad"]}}</td style="color: aliceblue;">
+      <td style="color: black;">{{ r["rBiletSahibiTC"]}}</td style="color: aliceblue;">
+      
+    </tr>
+  </form>
+    {% endfor %}
+</table>
+
+
+
+
+{%endblock %}

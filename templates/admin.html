@@ -1,0 +1,49 @@
+{% extends "layout.html" %}
+
+{%block title%}
+        Admin Sayfası
+{%endblock %}
+
+
+{%block body%}
+<center>
+    <div class="row">
+        <div class="col-md-4">
+            
+                <h3 style=" color: oldlace; text-align: center;"> Ekleme İşlemleri </h3>
+                <button type="button" class="btn btn-warning"><a style="color: black;" href="/sirket_ekle">Şirket Ekle</a></button><br>
+                
+                <button type="button" class="btn btn-warning"><a style="color: black;"  href="/ucak_ekle">Uçak Ekle</a style="color: black;"></button><br>
+                <button type="button" class="btn btn-warning"><a style="color: black;"  href="/ulke_ekle">Ülke Ekle</a style="color: black;"></button><br>
+                <button type="button" class="btn btn-warning"><a style="color: black;"  href="/sehir_ekle">Sehir Ekle</a></button><br>
+                <button type="button" class="btn btn-warning"><a style="color: black;"  href="/rota_ekle">Rota Ekle</a></button><br>
+                <button type="button" class="btn btn-warning"><a style="color: black;"  href="/fiyat_ekle">Fiyat Ekle</a></button><br>
+                <button type="button" class="btn btn-warning"><a style="color: black;"  href="/ucus_ekle">Uçuş Ekle</a style="color: black;"></button><br>
+                    
+            
+        </div>
+        
+        <div class="col-md-4">
+            
+                <h3 style=" color: oldlace; text-align: center;"> Silme İşlemleri </h3>
+                <button type="button" class="btn btn-warning"><a style="color: black;"  href="/sirket_sil">Şirket Sil</a style="color: black;"></button><br>
+                <button type="button" class="btn btn-warning"><a style="color: black;"  href="/ucak_sil">Uçak Sil</a style="color: black;"></button><br>
+                <button type="button" class="btn btn-warning"><a style="color: black;"  href="/ulke_sil">Ülke Sil</a></button><br>
+                <button type="button" class="btn btn-warning"><a style="color: black;"  href="/sehir_sil">Sehir Sil</a></button><br>
+        
+            
+        </div>
+        <div class="col-md-4">
+            
+                <h3 style=" color: oldlace; text-align: center;"> Güncelleme İşlemleri </h3>
+                <button type="button" class="btn btn-warning"><a style="color: rgb(23, 26, 23);"  href="/sirket_duzenle">Şirket Düzenle</a style="color: black;"></button><br>
+                <button type="button" class="btn btn-warning"><a style="color: black;"  href="/ucak_guncelle">Uçak Güncelle</a style="color: black;"></button><br>
+                <button type="button" class="btn btn-warning"><a style="color: black;"  href="/ulke_guncelle">Ülke Güncelle</a style="color: black;"></button><br>
+                <button type="button" class="btn btn-warning"><a style="color: black;"  href="/sehir_guncelle">Sehir Güncelle</a style="color: black;"></button><br>
+            
+            
+        </div>
+    </div>
+
+
+{%endblock %}

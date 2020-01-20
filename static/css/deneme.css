@@ -1,0 +1,54 @@
+*{
+    font-style: initial;
+    color:black;
+}
+#nav-bar{
+	position: sticky;
+	top: 0;
+    z-index: 20;
+    background-image: linear-gradient(to right,#eb840eb6,rgb(36, 74, 133));
+    
+
+	
+}
+.fnt{
+	font-style: italic;
+	font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.navbar{
+	background-image: linear-gradient(to right,#eb840eb6,rgb(36, 74, 133));
+	padding: 0 !important;
+	
+}
+.navbar-brand img{
+	height: 40px;
+    padding-left: 70px;
+    
+}
+.navbar-nav li{
+	padding: 0 10px;
+}
+.navbar-nav li a{
+	color: #fff !important;
+	font-weight: 600;
+	float: right;
+	text-align: left;
+}
+.fa-bars{
+	color: #fff;
+	font-size: 30px !important;
+}
+.navbar-toggler{
+	outline: none !important;
+}
+
+
+body{
+    margin: 0;
+	padding: 0;
+	background-image: url('../img/bg.jpg');
+}
+#h3 {
+    color:red;
+}

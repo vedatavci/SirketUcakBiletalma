@@ -1,0 +1,37 @@
+{% extends "layout.html" %}
+
+{%block title%}
+        Şehir Güncelleme Sayfası
+{%endblock %}
+
+
+{%block body%}
+<center>
+  <h3   style=" color: black; font-family: initial; font-weight: bold;">Şehir Güncelle</h3><br>
+  
+
+<form action = "{{ url_for('sehir_guncelle')}}", method = "POST">
+  <p style="font-weight: bold; color: orange;">Şehir Seçin</p>
+    <select name="sehir">
+        {% for sehir in sehirler %}
+        <option value="{{sehir.sehirId}}">{{sehir.sehirAd}}</option>
+        {% endfor %}
+      </select><br>
+      <br>
+      <p style="font-weight: bold; color: orange;">Ülke Seçin</p>
+<select name="ulke">
+    {% for ulke in ulkeler %}
+    <option value="{{ulke.ulkeId}}">{{ulke.ulkeAd}}</option>
+    {% endfor %}
+  </select><br><br>
+
+  
+  <p style="font-weight: bold; color: orange;">Şehir Yeni Adı:</p> <input type = "text" name = "sehirAdi" /><br><br>
+  <input   style="background-color: orange; border-radius: 10px;"  type = "submit" value = "        Güncelle         " /><br>
+</form>
+</center
+
+
+
+
+{%endblock %}

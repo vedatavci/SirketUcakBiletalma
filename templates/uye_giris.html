@@ -1,0 +1,20 @@
+{% extends "layout.html" %}
+
+{%block body%}
+<center>
+<form action = "{{ url_for('uye_giris')}}", method = "POST">
+    <h2  style=" color: black; font-family: initial; font-weight: bold;">Üye Giriş</h2 >
+      
+        <table>
+            <tr>
+    <td style="font-weight: bold; color: white;">Kullanıcı Adı: </td> </tr> <tr><td> <input placeholder="Kullanıcı Adı" type = "text" name = "kullaniciAdi" /><td><br><br>
+            </tr>
+            <tr >
+                <td style="font-weight: bold; color: white;">   Şifre: </td> <br> </tr> <tr><td><input placeholder="Şifre " type = "text" name = "sifre" /></td><br>
+                </tr>
+    </table> <br>   
+    <input  style="background-color: orange; border-radius: 10px;" type = "submit" value = "    Giriş Yap    "  /><br>
+ </form></center>
+ 
+{%endblock %}
+

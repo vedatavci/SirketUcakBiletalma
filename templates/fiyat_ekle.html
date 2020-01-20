@@ -1,0 +1,31 @@
+{% extends "layout.html" %}
+
+{%block title%}
+        Fiyat Ekleme Sayfası
+{%endblock %}
+
+{%block body%}
+<center>
+<form action = "{{ url_for('fiyat_ekle')}}", method = "POST">
+    <h3   style=" color: black; font-family: initial; font-weight: bold;">Fiyat Ekle</h3><br>
+    
+    <p style="font-weight: bold; color: orange;">Rota Seçin</p>
+    <select name="rota">
+        {% for rota in rotalar %}
+        <option value="{{rota}}">Kalkış Şehri - {{rotalar[rota]["kalkisSehri"]}} ----->  Varış Şehri - {{rotalar[rota]["varisSehri"]}}</option>
+        {% endfor %}
+      </select><br><br>
+
+      <p style="font-weight: bold; color: orange;">Şirket - Uçak Seç</p>
+      <select name="sirketUcak">
+        {% for sU in sirketUcak %}
+        <option value="{{sU}}">Şirket - {{sirketUcak[sU]["sirket"]}}  *****   Uçak Modeli - {{sirketUcak[sU]["ucakModel"]}}</option>
+        {% endfor %}
+      </select><br><br>
+      
+      <b  style="font-weight: bold; color: orange;">Fiyatını Girin:   </b><input  type = "text" name = "fiyat" /><br><br>
+      
+   <input   style="background-color: orange; border-radius: 10px;"  type = "submit" value = "    Ekle    " /><br>
+ </form>
+ <center>
+{%endblock %}

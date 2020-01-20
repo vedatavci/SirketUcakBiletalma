@@ -1,0 +1,102 @@
+@import "https://use.fontawesome.com/releases/v5.5.0/css/all.css";
+body{
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+    background: url(../images/bg.jpg) no-repeat;
+    background-size: cover;
+  }
+  input::-moz-placeholder {
+    color:white;
+    opacity: 1;
+  }
+  input:-ms-input-placeholder {
+    color:white;
+  }
+  input::-webkit-input-placeholder {
+    color:white;
+  }
+.login-box{
+  width: 280px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  color: white;
+}
+.modal-dialog {
+ 
+    width: 360px;
+
+  }
+
+.modal-header {
+
+background-color: #337AB7;
+
+padding:16px 16px;
+
+color:#FFF;
+
+border-bottom:2px dashed red;
+
+}
+.login-box h1{
+  right: 200px;
+  font-size: 30px;
+  border-bottom: 3px solid navy;
+  margin-bottom: -10px;
+  padding: 13px 0;
+  color:yellow;
+ 
+
+}
+
+
+.textbox{
+  width: 100%;
+  overflow: hidden;
+  font-size: 20px;
+  padding: 8px 0;
+  margin: 8px 0;
+  border-bottom: 3px solid navy;
+}
+.textbox i{
+  width: 26px;
+  float: left;
+  text-align: center;
+}
+.textbox input{
+  border: none;
+  outline: none;
+  background: none;
+  color: white;
+  font-size: 18px;
+  width: 80%;
+  float: left;
+  margin: 0 10px;
+}
+
+.box select{
+  background: #cf4e2d;
+  color: #fff;
+  
+  border:none;
+  
+  box-shadow: 0 , 5px, 25px, rgba(0, 0, 0, .5);
+  -webkit-appearance: button;
+  outline: none;
+}
+.box:before{
+  
+  
+
+  text-align: center;
+  color: #fff;
+  font-size: 15px;
+  pointer-events: none;
+  background: #007ce0;
+}
+.box:hover:before{
+  background: #0472ca;
+}

@@ -1,0 +1,44 @@
+{% extends "layout.html" %}
+
+{%block title%}
+        Sepet
+{%endblock %}
+
+{%block body%}
+<table class="table">
+  <thead class="thead-dark">
+    <tr>
+      <th scope="col">Uçuş ID</th>
+      <th scope="col">Rezervasyon Saati</th>
+      <th scope="col">Bilet Sahibinin Adı</th>
+      <th scope="col">Bilet Sahibinin Aoyadı</th>
+      <th scope="col">Bilet Sahibinin Acsi</th>
+      <th style="background-color: rgb(156, 142, 116);" scope="col"></th>
+      <th style="background-color: rgb(177, 163, 138);" scope="col"></th>
+      <th style="background-color: rgb(212, 206, 195);" scope="col"></th>
+      
+    </tr>
+    
+  </thead>
+  <tbody>
+  {% for urun in spt %}
+  <form" action = "{{ url_for('rezervasyon_yap')}}", method = "POST"></form>
+  <tr>
+
+      <td style="color: white;">{{ spt[urun]["ucusId"] }}</td>
+      <td style="color: white;">{{ spt[urun]["rezervasyonSaati"] }}</td style="color: aliceblue;">
+      <td style="color: white;">{{ spt[urun]["biletSahibiAd"] }}</td style="color: aliceblue;">
+      <td style="color: white;">{{ spt[urun]["biletSahibiSoyad"] }}</td style="color: aliceblue;">
+      <td style="color: white;">{{ spt[urun]["biletSahibiTC"] }}</td style="color: aliceblue;">
+      <td ><a href="{{ url_for('odeme_yap',sepetKey=urun) }}">    <input style=" border-radius: 8px; background-color: yellow;" type="button" value = "Ödeme Yap" /></a></td >
+      <td><a href="{{ url_for('rezervasyon_sil',sepetKey=urun) }}">    <input style=" border-radius: 8px; background-color: yellow;"  type="button" value = "   Sil   " /></a></td>
+      <td><a href="{{ url_for('rezervasyon_guncelle',sepetKey=urun) }}">    <input  style=" border-radius: 8px; background-color: yellow;"     type="button" value = "Düzenle" /></a></td>
+      
+    </tr>
+  </form>
+    {% endfor %}
+</table>
+   
+      
+
+{%endblock %}
